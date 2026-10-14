@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بنك أسئلة المدخل إلى العلوم السياسية - 200 سؤال</title>
+    <title>بنك أسئلة المدخل إلى العلوم السياسية</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans min-h-screen p-4 md:p-8 flex items-center justify-center">
     <div class="max-w-3xl w-full bg-slate-800 rounded-2xl shadow-2xl p-6 md:p-8 border border-slate-700">
         <header class="border-b border-slate-700 pb-4 mb-6 text-center">
             <h1 class="text-2xl font-bold text-teal-400">امتحانات مادة المدخل إلى العلوم السياسية</h1>
-            <p class="text-sm text-slate-400 mt-1">المحاكاة الجامعية المغربية - بنك الأسئلة الشامل (200 سؤال QCM)</p>
+            <p class="text-sm text-slate-400 mt-1">المنصة التفاعلية لطلاب القانون</p>
         </header>
 
         <div id="quiz-container">
             <div class="flex justify-between items-center mb-4">
-                <span id="q-number" class="text-xs font-semibold bg-teal-900 text-teal-300 px-3 py-1 rounded-full">السؤال 1 من 200</span>
-                <span id="progress-text" class="text-xs text-slate-400 font-medium">التقدم: 0.5%</span>
+                <span id="q-number" class="text-xs font-semibold bg-teal-900 text-teal-300 px-3 py-1 rounded-full">السؤال 1</span>
+                <span id="progress-text" class="text-xs text-slate-400 font-medium"></span>
             </div>
             
             <div id="question-box" class="mb-6">
@@ -39,8 +39,7 @@
     </div>
 
     <script>
-        // قاعدة البيانات الأساسية المستخلصة من مرجع المدخل إلى العلوم السياسية
-        const rawTopics = [
+        const questions = [
             {
                 q: "ما هو المعنى الاصطلاحي للظاهرة السياسية في الدراسات السياسية؟",
                 o: ["كل ظاهرة تنجم عن تجمع إنساني وسلوك داخل مجتمع منظم لإقرار أهداف وتدبير الخلافات", "مجموعة القوانين الجنائية الوضعية الصرفة", "الأحكام الشرعية المتعلقة بالمعاملات فقط", "القرارات الإدارية البحتة الصادرة عن وزارة الداخلية"],
@@ -68,9 +67,9 @@
             },
             {
                 q: "ما هي الفروع الأربعة الأساسية لعلم السياسة حسب تصنيف اليونسكو سنة 1950؟",
-                o: ["النظرية السياسية وتاريخ الأفكار، النظم السياسية، الأحزاب والرأي العام، والعلاقات الدولية", "القانون الجنائي، القانون المدني، المسطرة المدنية، والمسطرة الجنائية", "الاقتصاد الجزئي، المحاسبة العمومية، الإدارة المالية، والتجارة", "علم الاجتماع الأسري، الأنثروبولوجيا الثقافية، الجกรม التطبيقي، والتاريخ الحديث"],
+                o: ["النظرية السياسية وتاريخ الأفكار، النظم السياسية، الأحزاب والرأي العام، والعلاقات الدولية", "القانون الجنائي، القانون المدني، المسطرة المدنية، والمسطرة الجنائية", "الاقتصاد الجزئي، المحاسبة العمومية، الإدارة المالية، والتجارة", "علم الاجتماع الأسري، الأنثروبولوجيا الثقافية، الجرائم التطبيقي، والتاريخ الحديث"],
                 c: 0
             },
             {
                 q: "ما هو مفهوم النسق السياسي عند دافيد إيستون؟",
-                o: ["الحياة السياسية كجسد من التفاعلات تتلقى المدخلات (المطالب والمساندة) وتصدر المخرجات (القرارات والسياسات)", "مجموعة القوانين المكتوبة في الجريدة الرسمية وحدها", "تنظيم إداري تقليدي غير متفاعل مع بيئ
+                
