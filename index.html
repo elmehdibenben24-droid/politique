@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بنك أسئلة المدخل إلى العلوم السياسية - 200 سؤال</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen p-4 md:p-8 flex items-center justify-center">
+    <div class="max-w-3xl w-full bg-slate-800 rounded-2xl shadow-2xl p-6 md:p-8 border border-slate-700">
+        <header class="border-b border-slate-700 pb-4 mb-6 text-center">
+            <h1 class="text-2xl font-bold text-teal-400">امتحانات مادة المدخل إلى العلوم السياسية</h1>
+            <p class="text-sm text-slate-400 mt-1">المحاكاة الجامعية المغربية - بنك الأسئلة الشامل (200 سؤال QCM)</p>
+        </header>
+
+        <div id="quiz-container">
+            <div class="flex justify-between items-center mb-4">
+                <span id="q-number" class="text-xs font-semibold bg-teal-900 text-teal-300 px-3 py-1 rounded-full">السؤال 1 من 200</span>
+                <span id="progress-text" class="text-xs text-slate-400 font-medium">التقدم: 0.5%</span>
+            </div>
+            
+            <div id="question-box" class="mb-6">
+                <h2 id="q-text" class="text-lg font-medium text-white leading-relaxed"></h2>
+            </div>
+
+            <div id="options-box" class="space-y-3 mb-6"></div>
+
+            <div class="flex justify-between items-center border-t border-slate-700 pt-4">
+                <span id="score-display" class="font-semibold text-teal-400">النتيجة الصحيحة: 0</span>
+                <button id="next-btn" onclick="nextQuestion()" class="bg-teal-600 hover:bg-teal-500 text-white font-medium px-6 py-2 rounded-xl transition hidden">السؤال الموالي</button>
+            </div>
+        </div>
+
+        <div id="result-box" class="hidden text-center py-8">
+            <h2 class="text-2xl font-bold text-white mb-2">انتهى الاختبار بنجاح!</h2>
+            <p id="final-score" class="text-lg text-slate-300 mb-6"></p>
+            <button onclick="restartQuiz()" class="bg-teal-600 hover:bg-teal-500 text-white font-medium px-6 py-2 rounded-xl">إعادة الاختبار</button>
+        </div>
+    </div>
+
+    <script>
+        // قاعدة البيانات الأساسية المستخلصة من مرجع المدخل إلى العلوم السياسية
+        const rawTopics = [
+            {
+                q: "ما هو المعنى الاصطلاحي للظاهرة السياسية في الدراسات السياسية؟",
+                o: ["كل ظاهرة تنجم عن تجمع إنساني وسلوك داخل مجتمع منظم لإقرار أهداف وتدبير الخلافات", "مجموعة القوانين الجنائية الوضعية الصرفة", "الأحكام الشرعية المتعلقة بالمعاملات فقط", "القرارات الإدارية البحتة الصادرة عن وزارة الداخلية"],
+                c: 0
+            },
+            {
+                q: "ما هي ركائز المدرسة الأمريكية في دراسة الظاهرة السياسية؟",
+                o: ["تقول باستحالة وجود علم واحد مستقل للسياسة وتعتبرها مترابطة عضوياً مع العلوم الاجتماعية", "ترتكز بالكامل على القانون العام الوضعي الدستوري", "تعتمد حصراً على المنهج الوصفي التاريخي والفلسفي", "تمنع دراسة السلوك السياسي للجمهور"],
+                c: 0
+            },
+            {
+                q: "ماذا نتج عن اجتماع لجنة خبراء اليونسكو بباريس سنة 1950؟",
+                o: ["إصدار الكتاب الجماعي 'علم السياسة المعاصر' وتحديد فروعه الأربعة الأساسية", "إلغاء تدريس علم السياسة في الجامعات", "فصل السياسة نهائياً عن العلاقات الدولية", "اعتماد الديمقراطية المباشرة وحدها"],
+                c: 0
+            },
+            {
+                q: "من هو الرائد التاريخي الذي دشن علم السياسة واعتمد منهج الملاحظة والاستقراء في كتابه 'السياسة'؟",
+                o: ["أرسطو (المعلم الأول)", "نيكولا ميكيافيلي", "أوغست كونت", "كارل ماركس"],
+                c: 0
+            },
+            {
+                q: "ما الذي تميز به نيكولا ميكيافيلي في كتابه 'الأمير'؟",
+                o: ["فصل الأخلاق عن السياسة واعتبر الدولة قوة واستمرارها رهين بالقوة والواقعية", "دافع عن الديمقراطية التشاركية المطلقة", "ربط السياسة بقواعد الفقه الإسلامي", "أكد على وجوب الخضوع للأخلاق والمثالية"],
+                c: 0
+            },
+            {
+                q: "ما هي الفروع الأربعة الأساسية لعلم السياسة حسب تصنيف اليونسكو سنة 1950؟",
+                o: ["النظرية السياسية وتاريخ الأفكار، النظم السياسية، الأحزاب والرأي العام، والعلاقات الدولية", "القانون الجنائي، القانون المدني، المسطرة المدنية، والمسطرة الجنائية", "الاقتصاد الجزئي، المحاسبة العمومية، الإدارة المالية، والتجارة", "علم الاجتماع الأسري، الأنثروبولوجيا الثقافية، الجกรม التطبيقي، والتاريخ الحديث"],
+                c: 0
+            },
+            {
+                q: "ما هو مفهوم النسق السياسي عند دافيد إيستون؟",
+                o: ["الحياة السياسية كجسد من التفاعلات تتلقى المدخلات (المطالب والمساندة) وتصدر المخرجات (القرارات والسياسات)", "مجموعة القوانين المكتوبة في الجريدة الرسمية وحدها", "تنظيم إداري تقليدي غير متفاعل مع بيئ
